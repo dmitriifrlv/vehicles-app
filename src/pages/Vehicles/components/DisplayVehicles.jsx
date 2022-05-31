@@ -2,6 +2,8 @@ import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import DataTable from 'react-data-table-component';
 import VehiclesHeader from './VehiclesHeader';
+import Loader from '../../../components/Loader/Loader';
+import ErrorMessage from '../../../components/ErrorMessage/ErrorMessage';
 
 function DisplayVehicles() {
   const { data, loading } = useOutletContext();
@@ -89,13 +91,16 @@ function DisplayVehicles() {
 
   return (
     <>
+
       <VehiclesHeader />
-      {/* add loader here */}
-      <DataTable
-        columns={columns}
-        data={data}
-        customStyles={customStyles}
-      />
+      {
+        loading ? <Loader /> : data ? <DataTable
+          columns={columns}
+          data={data.sst_test_case_vehicles_dmitrii}
+          customStyles={customStyles}
+        /> : <ErrorMessage />
+      }
+
     </>
   );
 }
