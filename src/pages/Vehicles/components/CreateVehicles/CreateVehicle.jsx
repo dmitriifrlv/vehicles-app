@@ -41,6 +41,7 @@ function CreateVehicle() {
   const [description, setDescription] = useState("");
 
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,6 +52,7 @@ function CreateVehicle() {
       colour !== "" &&
       plateNumber !== ""
     ) {
+      setLoading(true)
       addVehicle({
         variables: {
           input: {
@@ -65,6 +67,7 @@ function CreateVehicle() {
       })
         .catch((e) => {
           alert(e);
+          setLoading(false)
         })
         .then(() => {
           refetch();
@@ -227,7 +230,7 @@ function CreateVehicle() {
           </ul>
         </fieldset>
         <button className="primary" type="submit">
-          Add New Vehicle
+          {loading ? <span> Adding new vehicle...</span> : <span>Add New Vehicle</span>}
         </button>
       </form>
     </div>
