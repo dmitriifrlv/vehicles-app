@@ -1,0 +1,40 @@
+.Vehicles {
+  &__container{
+    padding: 1.5rem;
+    overflow: scroll;
+    height: 100vh;
+    .card{
+      .card-header{
+        background-color: transparent;
+        border: none;
+        padding: 1.5rem 0rem 1rem 2rem;
+        .heading_styles{
+          display: flex;
+          flex-direction: column;
+          font-size: 1.6rem;
+          & i {
+            font-size: 1.3rem;
+            padding-bottom: 1rem;
+            cursor: pointer;
+          }
+          & span {
+            font-size: 1.6rem;
+            padding-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  &__header{
+    margin-bottom: 2rem;
+    & button{
+      background-color: #ff6262;
+      color: #fff;
+      border: 0px;
+      border-radius: 5px;
+      padding: 7px 12px;
+      font-weight: 600;
+    }
+  }
+}
+

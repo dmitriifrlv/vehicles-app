@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+}
+
+.parent_cont {
+  position: absolute;
+  top: 45px;
+  left: 130px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.App{
+  &__wrapper{
+    height: 100vh;
+    overflow: hidden;
+    &-sidebar-open{
+      width: calc(100% - 240px);
+      transition: 0.33s, cubic-bezier(0.685, 0.0473, 0.346, 1);
+      background-color: #f5f5f5;
+      position: relative;
+      float: right;
+    }
+    &-sidebar-closed{
+      width: 100%;
+      transition: 0.33s, cubic-bezier(0.685, 0.0473, 0.346, 1);
+      background-color: #f5f5f5;
+      position: relative;
+      float: right;
+    }
+  }
+}
+  

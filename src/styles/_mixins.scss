@@ -1,0 +1,125 @@
+@mixin property-variants($base, $property, $variants: ()) {
+  @each $size, $value in $variants {
+    @if $size == "md" {
+      #{$base} {
+        #{$property}: $value;
+      }
+
+      #{$base}-n {
+        #{$property}: $value;
+      }
+    }
+
+    #{$base}-#{$size} {
+      #{$property}: $value;
+    }
+
+    #{$base}-n-#{$size} {
+      #{$property}: -$value;
+    }
+  }
+}
+
+// Common thumbnail properties
+// -------------------------
+@mixin thumb($parent, $size) {
+  #{$parent} {
+    width: $size;
+
+    > .glyphicon,
+    > .fa {
+      line-height: $size;
+    }
+  }
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin scroll-bar($color) {
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: none;
+    background-color: transparent;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: $color;
+  }
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+/* Chat Scrollbar */
+
+@mixin chat-scrollbar($color, $width) {
+  &::-webkit-scrollbar {
+    width: $width;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: none;
+    border-radius: $border-radius;
+    background-color: transparent;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    border: none;
+    background-color: $color;
+  }
+}
+
+@mixin filter-elements {
+  padding: 0 3rem;
+  border: 0.1rem solid rgba(200, 196, 196, 0.74);
+  border-radius: 0.25rem;
+  margin-right: 2rem;
+  height: 2.5rem;
+  width: 17.5rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin filter-button {
+  display: flex;
+  &-submit{
+    background-color: #e05f63;
+    border: 0.1rem solid #e05f63;
+    color: white;
+  }
+  &-cancel{
+    background-color: #706e6e;
+    border: 0.1rem solid #706e6e;
+    color: white;
+  }
+  & button{
+    margin-right: 1.5rem;
+    padding: 0.2rem 2.5rem;
+    border-radius: 5px;
+  }
+  & button:disabled{
+    background-color: #e05f638c;
+    border: 0.1rem solid #e05f6331;
+    color: white;
+  }
+}

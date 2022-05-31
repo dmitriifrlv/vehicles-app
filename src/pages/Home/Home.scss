@@ -1,0 +1,27 @@
+.Home{
+    &__container{
+    padding: 1.5rem;
+    height: 100vh;
+    .card{
+      max-height: 88vh;
+      .card-header{
+        background-color: transparent;
+        border: none;
+        padding: 0 0 1rem 2rem;
+        & h2 {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+    &__main{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: scroll;
+      min-height: 85vh;
+      .disableClick{
+        pointer-events: none;
+      }
+    }
+}

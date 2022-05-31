@@ -1,0 +1,47 @@
+.header {
+  width:100%;
+  z-index:98;
+  height: 7vh;
+  min-height: 68px;
+  color: #555;
+  background: #fff;
+  padding: 1.2rem 1.5rem;
+  .icons_cont {
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    .active-title {
+      color: #616161;
+      font-size: 1.125rem;
+      @media (max-width: 767px) {
+        font-size: 16px;
+      }
+    }
+    .icons {
+      margin-right: 20px;
+      font-size: 19px;
+      color: #002b49 !important;
+      @media (max-width: 768px) {
+        margin-right: 14px;
+      }
+    }
+    .topNavbarIcons {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+  }
+  .user_cont {
+    display: flex;
+    align-items: center;
+    .dropdown {
+      .btn:focus {
+        box-shadow: none !important;
+      }
+      .dropdown-menu {
+        min-width: 8rem;
+      }
+    }
+  }
+}
