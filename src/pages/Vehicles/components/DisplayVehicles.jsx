@@ -103,7 +103,6 @@ function DisplayVehicles() {
       },
     },
   };
-  console.log(data);
 
   return (
     <>
