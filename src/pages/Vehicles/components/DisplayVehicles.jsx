@@ -31,6 +31,7 @@ function DisplayVehicles() {
       name: 'Name',
       width: '12rem',
       reorder: true,
+      sortable: true
     },
     {
       selector: (row) => row.capacity,
