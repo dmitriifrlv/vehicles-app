@@ -1,0 +1,90 @@
+.Vehicles__editVehicle{
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    button {
+      background-color: rgb(220, 214, 214);
+      border: none;
+      border-radius: 5px;
+      padding: 7px 14px;
+      font-weight: 600;
+      width: fit-content;
+      cursor: pointer;
+    }
+    input.input-error-state{
+      border: 1px solid red;
+    }
+    button.primary {
+      background-color: #ff6262;
+      color: #fff;
+      border: none
+    }
+    button.warning {
+      border: none;
+      background-color: rgb(218, 30, 30);
+      color: #fff;
+    }
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-radius: 8px;
+      .create-vehicle-form-field{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap:4px;
+        input {
+          height: 32px;
+          width: 50%;
+        }
+      }
+      ul{
+        padding-left: 0;list-style: none
+      }
+      .note-row{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 32px;
+        
+        
+        button {
+          height: 32px;
+        }
+      }
+      .form-error {
+        color: red;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .Vehicles__editVehicle{
+
+    form {
+      button {
+        font-size: 1rem;
+        height: 40px;
+      }
+      fieldset {
+        .create-vehicle-form-field{
+          input {
+            height: 40px;
+            width: 100%;
+            font-size: 1rem;
+          }
+        }
+        .note-row {
+          button {
+          height: 40px;
+          }
+        }
+      }
+    }
+  }
+
+}
