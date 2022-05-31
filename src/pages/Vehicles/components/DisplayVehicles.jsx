@@ -82,6 +82,9 @@ function DisplayVehicles() {
       style: {
         borderTop: '1px solid rgba(0, 0, 0, 0.55)',
         borderBottom: '1px solid rgba(0, 0, 0, 0.55)',
+        '&:nth-child(2n)': {
+          background: '#d0d0d0',
+        },
       },
     },
     cells: {
