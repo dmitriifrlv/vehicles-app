@@ -7,7 +7,7 @@ function Header() {
   const { setShowNavbar } = useContext(NavbarContext);
 
   const toggleModal = () => {
-    setShowNavbar(false);
+    setShowNavbar(prevState => setShowNavbar(!prevState));
   };
 
   return (
