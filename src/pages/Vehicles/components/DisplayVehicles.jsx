@@ -9,7 +9,14 @@ function DisplayVehicles() {
   const { data, loading } = useOutletContext();
 
   const notesFormatter = (cell) => {
-    //function to display notes
+    // I assumed that the content of notes cell may be different 
+    // and rather than accesing the properties directly decided to map through the data
+    const notesData = Object.entries(cell.notes)
+    return <ul className='notes'>
+      {
+        notesData.map((note, index) => <li key={index}>{note[0]}:{note[1]}</li>)
+      }
+    </ul>
   };
 
   const columns = [
