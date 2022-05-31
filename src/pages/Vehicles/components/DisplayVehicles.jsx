@@ -122,6 +122,7 @@ function DisplayVehicles() {
             return a;
           }, [])}
           customStyles={customStyles}
+          pagination
         />
       ) : (
         <ErrorMessage />
