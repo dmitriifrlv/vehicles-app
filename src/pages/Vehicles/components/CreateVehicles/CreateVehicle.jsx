@@ -90,8 +90,9 @@ function CreateVehicle() {
       });
       setField("");
       setDescription("");
+    } else {
+      setError(true);
     }
-    setError(true);
   };
 
   const onDeleteNoteHandler = (e, key) => {
@@ -102,8 +103,8 @@ function CreateVehicle() {
     });
   };
 
-  const fieldErrorCondition = error && field === "" && description !== "";
-  const descriptionErrorCondition = error && description === "" && field !== "";
+  const fieldErrorCondition = error && field === ""
+  const descriptionErrorCondition = error && description === ""
 
   return (
     <div className="Vehicles__editVehicle">
